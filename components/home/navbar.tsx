@@ -20,8 +20,8 @@ export function Navbar() {
   const navLinks = [
     { href: "#features", label: "Features" },
     { href: "#how-it-works", label: "How It Works" },
-    { href: "#pricing", label: "Pricing" },
-    { href: "#testimonials", label: "Testimonials" },
+    { href: "#report", label: "Report Incident" },
+    { href: "#resources", label: "Resources" },
     { href: "#faq", label: "FAQ" },
   ];
 
@@ -39,9 +39,9 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 font-sans ${
         isScrolled
-          ? "bg-background/80 backdrop-blur-lg border-b border-border shadow-lg"
+          ? "bg-background/95 backdrop-blur-lg border-b border-border shadow-lg"
           : "bg-transparent"
       }`}
     >
@@ -49,11 +49,11 @@ export function Navbar() {
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 via-blue-500 to-cyan-500 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
-              <span className="text-white font-bold text-xl">R</span>
+            <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-md shadow-blue-900/20">
+              <span className="text-primary-foreground font-bold text-xl">C</span>
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-cyan-600 bg-clip-text text-transparent">
-              Resume Analyzer
+            <span className="text-xl font-bold text-foreground">
+              CrimeWatch
             </span>
           </Link>
 
@@ -64,10 +64,10 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => scrollToSection(e, link.href)}
-                className="text-foreground/70 hover:text-foreground transition-colors duration-200 font-medium relative group"
+                className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium font-body relative group"
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-cyan-500 group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
               </a>
             ))}
           </div>
@@ -77,9 +77,9 @@ export function Navbar() {
             <ThemeSwitcher />
             <Link
               href="/auth/sign-in"
-              className="px-6 py-2.5 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold hover:shadow-lg hover:shadow-purple-500/50 transform hover:scale-105 transition-all duration-300"
+              className="px-6 py-2.5 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-blue-600 hover:shadow-lg hover:shadow-blue-900/20 transform hover:scale-105 transition-all duration-300 font-sans"
             >
-              Get Started
+              Emergency SOS
             </Link>
           </div>
 
@@ -110,16 +110,16 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => scrollToSection(e, link.href)}
-                className="block text-foreground/70 hover:text-foreground transition-colors duration-200 font-medium py-2"
+                className="block text-foreground/70 hover:text-foreground transition-colors duration-200 font-medium py-2 font-body"
               >
                 {link.label}
               </a>
             ))}
             <Link
               href="/auth/sign-in"
-              className="block text-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold mt-4"
+              className="block text-center px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold mt-4 font-sans hover:bg-blue-600 transition-colors"
             >
-              Get Started
+              Emergency SOS
             </Link>
           </div>
         </div>

@@ -4,68 +4,68 @@ import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Sarah Johnson",
-    role: "Software Engineer",
-    company: "Tech Corp",
-    image: "SJ",
+    name: "Officer James D.",
+    role: "Patrol Sergeant",
+    location: "Metro Police Dept",
+    image: "JD",
     rating: 5,
-    text: "This tool helped me land my dream job! The AI suggestions were spot-on and helped me optimize my resume for ATS systems. Highly recommended!",
+    text: "CrimeWatch gives us the real-time intel we need. The anonymous tips have directly led to 15 arrests in my precinct this month alone.",
   },
   {
-    name: "Michael Chen",
-    role: "Product Manager",
-    company: "Innovation Labs",
-    image: "MC",
+    name: "Sarah M.",
+    role: "Neighborhood Lead",
+    location: "Oakwood Community",
+    image: "SM",
     rating: 5,
-    text: "I was struggling to get interviews until I used Resume Analyzer. The detailed feedback helped me restructure my resume completely. Got 3 interviews in the first week!",
+    text: "Our neighborhood feels so much safer. Being able to see incidents on the map helps us avoid dangerous areas during our evening walks.",
   },
   {
-    name: "Emily Rodriguez",
-    role: "Marketing Director",
-    company: "Brand Studio",
-    image: "ER",
+    name: "Robert K.",
+    role: "Local Business Owner",
+    location: "Downtown District",
+    image: "RK",
     rating: 5,
-    text: "The industry-specific recommendations were incredibly valuable. It's like having a professional resume writer at your fingertips. Worth every penny!",
+    text: "I reported a break-in attempt anonymously. Police arrived within minutes because others had also flagged suspicious activity nearby.",
   },
   {
-    name: "David Kim",
-    role: "Data Scientist",
-    company: "Analytics Inc",
-    image: "DK",
+    name: "Maria G.",
+    role: "Concerns Citizen",
+    location: "Westside",
+    image: "MG",
     rating: 5,
-    text: "As someone who's reviewed hundreds of resumes, I can say this tool provides excellent guidance. The ATS optimization alone is worth the subscription.",
+    text: "Finally, a way to report issues without fear of retaliation. The app is easy to use and I love getting safety alerts for my area.",
   },
   {
-    name: "Jessica Taylor",
-    role: "UX Designer",
-    company: "Design Co",
-    image: "JT",
+    name: "David L.",
+    role: "University Student",
+    location: "Campus Housing",
+    image: "DL",
     rating: 5,
-    text: "Clean interface, powerful features, and instant results. This is exactly what job seekers need. My resume went from good to exceptional!",
+    text: "The night mode map is a lifesaver when walking home from the library. I know exactly which streets to avoid.",
   },
   {
-    name: "Alex Martinez",
-    role: "Sales Executive",
-    company: "Growth Partners",
-    image: "AM",
+    name: "Jennifer P.",
+    role: "HOA President",
+    location: "Lakeside Estates",
+    image: "JP",
     rating: 5,
-    text: "The scoring system helped me understand exactly what recruiters look for. Made targeted improvements and saw immediate results. Fantastic tool!",
+    text: "We implemented CrimeWatch for our gated community. Property crime has dropped by 40% since residents started using the app.",
   },
 ];
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="py-20 lg:py-32 bg-accent/30">
+    <section id="testimonials" className="py-20 lg:py-32 bg-secondary/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold">
-            <span className="bg-gradient-to-r from-purple-600 to-cyan-600 bg-clip-text text-transparent">
-              Loved by Job Seekers
+          <h2 className="text-4xl sm:text-5xl font-bold font-sans">
+            <span className="text-foreground">
+              Community Impact
             </span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Join thousands of professionals who've transformed their resumes and landed their dream jobs.
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-body">
+            Real stories from citizens and officers working together to build safer neighborhoods.
           </p>
         </div>
 
@@ -74,34 +74,34 @@ export function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="relative bg-card border border-border rounded-2xl p-8 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-300 hover:-translate-y-1 group"
+              className="relative bg-card border border-border rounded-2xl p-8 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-1 group"
             >
               {/* Quote Icon */}
               <div className="absolute top-6 right-6 opacity-10 group-hover:opacity-20 transition-opacity">
-                <Quote className="w-12 h-12 text-purple-500" />
+                <Quote className="w-12 h-12 text-primary" />
               </div>
 
               {/* Rating */}
               <div className="flex space-x-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-yellow-500 text-yellow-500" />
+                  <Star key={i} className="w-5 h-5 fill-primary text-primary" />
                 ))}
               </div>
 
               {/* Testimonial Text */}
-              <p className="text-foreground/80 leading-relaxed mb-6 relative z-10">
+              <p className="text-foreground/80 leading-relaxed mb-6 relative z-10 font-body">
                 "{testimonial.text}"
               </p>
 
               {/* Author */}
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-cyan-500 flex items-center justify-center text-white font-bold">
+                <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold font-sans">
                   {testimonial.image}
                 </div>
                 <div>
-                  <div className="font-semibold text-foreground">{testimonial.name}</div>
-                  <div className="text-sm text-muted-foreground">
-                    {testimonial.role} at {testimonial.company}
+                  <div className="font-semibold text-foreground font-sans">{testimonial.name}</div>
+                  <div className="text-sm text-muted-foreground font-body">
+                    {testimonial.role}, {testimonial.location}
                   </div>
                 </div>
               </div>

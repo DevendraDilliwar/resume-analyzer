@@ -1,4 +1,7 @@
 {
+  "name": "crimewatch",
+  "version": "0.1.0",
+  "description": "Anonymous crime reporting and community safety platform",
   "private": true,
   "scripts": {
     "dev": "next dev",

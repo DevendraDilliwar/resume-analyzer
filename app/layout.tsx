@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Plus_Jakarta_Sans, Poppins } from "next/font/google"; // Changed fonts
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
@@ -9,14 +9,23 @@ const defaultUrl = process.env.VERCEL_URL
 
 export const metadata: Metadata = {
   metadataBase: new URL(defaultUrl),
-  title: "Next.js and Supabase Starter Kit",
-  description: "The fastest way to build apps with Next.js and Supabase",
+  title: "CrimeWatch - Secure Community Reporting",
+  description: "Report crimes anonymously, track safety trends, and help keep your community safe with CrimeWatch.",
 };
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  display: "swap",
+// Configure Plus Jakarta Sans for Headings
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
+  variable: "--font-jakarta",
+  display: "swap",
+});
+
+// Configure Poppins for Body
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-poppins",
+  display: "swap",
 });
 
 export default function RootLayout({
@@ -26,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.className} antialiased`}>
+      <body className={`${jakarta.variable} ${poppins.variable} antialiased font-body`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

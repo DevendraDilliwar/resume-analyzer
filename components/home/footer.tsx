@@ -6,22 +6,22 @@ import { Github, Twitter, Linkedin, Mail } from "lucide-react";
 
 const footerLinks = {
   product: [
-    { label: "Features", href: "#features" },
-    { label: "How It Works", href: "#how-it-works" },
-    { label: "Pricing", href: "#pricing" },
+    { label: "Report Incident", href: "#report" },
+    { label: "Safety Map", href: "#map" },
+    { label: "Anonymous Tips", href: "#tips" },
     { label: "FAQ", href: "#faq" },
   ],
   company: [
     { label: "About Us", href: "/about" },
-    { label: "Blog", href: "/blog" },
-    { label: "Careers", href: "/careers" },
+    { label: "Community", href: "/community" },
+    { label: "Partners", href: "/partners" },
     { label: "Contact", href: "/contact" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms of Service", href: "/terms" },
     { label: "Cookie Policy", href: "/cookies" },
-    { label: "GDPR", href: "/gdpr" },
+    { label: "Disclaimer", href: "/disclaimer" },
   ],
 };
 
@@ -29,7 +29,7 @@ const socialLinks = [
   { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
   { icon: Github, href: "https://github.com", label: "GitHub" },
   { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Mail, href: "mailto:support@resumeanalyzer.com", label: "Email" },
+  { icon: Mail, href: "mailto:support@crimewatch.com", label: "Email" },
 ];
 
 export function Footer() {
@@ -40,24 +40,24 @@ export function Footer() {
   }, []);
 
   return (
-    <footer className="bg-accent/30 border-t border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
+    <footer className="bg-background border-t border-border font-sans">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-10"> {/* Reduced padding */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8"> {/* Reduced gap */}
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center space-x-2 group mb-4">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 via-blue-500 to-cyan-500 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
-                <span className="text-white font-bold text-xl">R</span>
+            <Link href="/" className="flex items-center space-x-2 group mb-3"> {/* Reduced margin */}
+              <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-md shadow-primary/20"> {/* Smaller icon */}
+                <span className="text-primary-foreground font-bold text-lg">C</span>
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-cyan-600 bg-clip-text text-transparent">
-                Resume Analyzer
+              <span className="text-lg font-bold text-foreground">
+                CrimeWatch
               </span>
             </Link>
-            <p className="text-muted-foreground mb-6 max-w-sm leading-relaxed">
-              AI-powered resume analysis to help you land your dream job. Get instant feedback and optimize for ATS systems.
+            <p className="text-muted-foreground mb-4 max-w-sm leading-relaxed font-body text-sm"> {/* Smaller text */}
+              Empowering communities with anonymous crime reporting.
             </p>
             {/* Social Links */}
-            <div className="flex space-x-4">
+            <div className="flex space-x-3"> {/* Reduced gap */}
               {socialLinks.map((social) => {
                 const Icon = social.icon;
                 return (
@@ -66,10 +66,10 @@ export function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-lg bg-card border border-border hover:border-purple-500/50 flex items-center justify-center hover:bg-accent transition-all duration-300 group"
+                    className="w-8 h-8 rounded-md bg-secondary border border-border hover:border-primary flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300 group"
                     aria-label={social.label}
                   >
-                    <Icon className="w-5 h-5 text-muted-foreground group-hover:text-purple-500 transition-colors" />
+                    <Icon className="w-4 h-4 text-muted-foreground group-hover:text-white transition-colors" /> {/* Smaller icons */}
                   </a>
                 );
               })}
@@ -77,14 +77,14 @@ export function Footer() {
           </div>
 
           {/* Product Links */}
-          <div>
-            <h3 className="font-semibold text-foreground mb-4">Product</h3>
-            <ul className="space-y-3">
+          <div className="text-sm"> {/* Smaller text container */}
+            <h3 className="font-semibold text-foreground mb-3">Features</h3>
+            <ul className="space-y-2"> {/* Reduced spacing */}
               {footerLinks.product.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-muted-foreground hover:text-purple-500 transition-colors duration-200"
+                    className="text-muted-foreground hover:text-primary transition-colors duration-200 font-body"
                   >
                     {link.label}
                   </a>
@@ -94,14 +94,14 @@ export function Footer() {
           </div>
 
           {/* Company Links */}
-          <div>
-            <h3 className="font-semibold text-foreground mb-4">Company</h3>
-            <ul className="space-y-3">
+          <div className="text-sm">
+            <h3 className="font-semibold text-foreground mb-3">Community</h3>
+            <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-muted-foreground hover:text-purple-500 transition-colors duration-200"
+                    className="text-muted-foreground hover:text-primary transition-colors duration-200 font-body"
                   >
                     {link.label}
                   </Link>
@@ -111,14 +111,14 @@ export function Footer() {
           </div>
 
           {/* Legal Links */}
-          <div>
-            <h3 className="font-semibold text-foreground mb-4">Legal</h3>
-            <ul className="space-y-3">
+          <div className="text-sm">
+            <h3 className="font-semibold text-foreground mb-3">Legal</h3>
+            <ul className="space-y-2">
               {footerLinks.legal.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-muted-foreground hover:text-purple-500 transition-colors duration-200"
+                    className="text-muted-foreground hover:text-primary transition-colors duration-200 font-body"
                   >
                     {link.label}
                   </Link>
@@ -129,12 +129,12 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <p className="text-sm text-muted-foreground">
-            © {currentYear} Resume Analyzer. All rights reserved.
+        <div className="mt-8 pt-6 border-t border-border flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0 text-xs text-muted-foreground font-body"> {/* Reduced margin, padding, text size */}
+          <p>
+            © {currentYear} CrimeWatch. All rights reserved.
           </p>
-          <p className="text-sm text-muted-foreground">
-            Made with ❤️ for job seekers worldwide
+          <p>
+            Stay Safe. Stay Alert.
           </p>
         </div>
       </div>

@@ -47,23 +47,23 @@ export function ForgotPasswordForm({
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       {success ? (
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-2xl">Check Your Email</CardTitle>
-            <CardDescription>Password reset instructions sent</CardDescription>
+        <Card className="bg-card border-border shadow-xl">
+          <CardHeader className="text-center">
+            <CardTitle className="text-2xl font-bold font-sans text-white">Check Your Email</CardTitle>
+            <CardDescription className="text-muted-foreground font-body">Password reset instructions sent</CardDescription>
           </CardHeader>
           <CardContent>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground font-body">
               If you registered using your email and password, you will receive
               a password reset email.
             </p>
           </CardContent>
         </Card>
       ) : (
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-2xl">Reset Your Password</CardTitle>
-            <CardDescription>
+        <Card className="bg-card border-border shadow-xl">
+          <CardHeader className="text-center">
+            <CardTitle className="text-2xl font-bold font-sans text-white">Reset Your Password</CardTitle>
+            <CardDescription className="text-muted-foreground font-body">
               Type in your email and we&apos;ll send you a link to reset your
               password
             </CardDescription>
@@ -72,7 +72,7 @@ export function ForgotPasswordForm({
             <form onSubmit={handleForgotPassword}>
               <div className="flex flex-col gap-6">
                 <div className="grid gap-2">
-                  <Label htmlFor="email">Email</Label>
+                  <Label htmlFor="email" className="font-body text-white">Email</Label>
                   <Input
                     id="email"
                     type="email"
@@ -80,18 +80,19 @@ export function ForgotPasswordForm({
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    className="bg-secondary border-input text-white placeholder:text-muted-foreground focus-visible:ring-primary font-body"
                   />
                 </div>
-                {error && <p className="text-sm text-red-500">{error}</p>}
-                <Button type="submit" className="w-full" disabled={isLoading}>
+                {error && <p className="text-sm text-red-500 font-body">{error}</p>}
+                <Button type="submit" className="w-full bg-primary hover:bg-blue-600 text-white font-sans font-semibold" disabled={isLoading}>
                   {isLoading ? "Sending..." : "Send reset email"}
                 </Button>
               </div>
-              <div className="mt-4 text-center text-sm">
+              <div className="mt-4 text-center text-sm font-body text-muted-foreground">
                 Already have an account?{" "}
                 <Link
                   href="/auth/login"
-                  className="underline underline-offset-4"
+                  className="underline underline-offset-4 hover:text-primary"
                 >
                   Login
                 </Link>

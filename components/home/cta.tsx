@@ -1,73 +1,68 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, ShieldAlert } from "lucide-react";
 
 export function CTA() {
   return (
-    <section className="py-20 lg:py-32 relative overflow-hidden">
+    <section className="py-20 lg:py-32 relative overflow-hidden bg-background">
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-blue-500/10 to-cyan-500/10"></div>
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -z-10"></div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="bg-card/50 backdrop-blur-xl border border-border rounded-3xl p-12 md:p-16 text-center shadow-2xl">
+        <div className="bg-card border border-border rounded-3xl p-12 md:p-16 text-center shadow-2xl relative overflow-hidden">
+          {/* Glow effect behind card content */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-primary/5 to-transparent pointer-events-none"></div>
+
           {/* Icon */}
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-600 to-cyan-600 mb-8">
-            <Sparkles className="w-8 h-8 text-white" />
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary mb-8 shadow-lg shadow-primary/20 relative z-10">
+            <ShieldAlert className="w-8 h-8 text-primary-foreground" />
           </div>
 
           {/* Heading */}
-          <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-            <span className="block text-foreground mb-2">Ready to Transform</span>
-            <span className="bg-gradient-to-r from-purple-600 to-cyan-600 bg-clip-text text-transparent">
-              Your Career?
+          <h2 className="text-4xl sm:text-5xl font-bold mb-6 font-sans relative z-10">
+            <span className="block text-foreground mb-2">Ready to Take Action?</span>
+            <span className="text-primary">
+              Join the Watch Today
             </span>
           </h2>
 
           {/* Description */}
-          <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-            Join thousands of professionals who've already optimized their resumes and landed their dream jobs. 
-            Start your free analysis today—no credit card required.
+          <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed font-body relative z-10">
+            Download the CrimeWatch app to report incidents, receive real-time alerts, and help keep your community safe. It's free and anonymous.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
             <Link
-              href="/auth/sign-up"
-              className="group px-8 py-4 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold text-lg hover:shadow-2xl hover:shadow-purple-500/50 transform hover:scale-105 transition-all duration-300 flex items-center space-x-2"
+              href="/download"
+              className="group px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold text-lg hover:bg-red-700 hover:shadow-2xl hover:shadow-primary/50 transform hover:scale-105 transition-all duration-300 flex items-center space-x-2 font-sans"
             >
-              <span>Start Free Analysis</span>
+              <span>Download App</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
-              href="#pricing"
-              className="px-8 py-4 rounded-full border-2 border-border hover:border-purple-500/50 font-semibold text-lg hover:bg-accent transition-all duration-300"
+              href="#features"
+              className="px-8 py-4 rounded-full border-2 border-border hover:border-primary/50 font-semibold text-lg hover:bg-secondary transition-all duration-300 font-sans text-foreground"
             >
-              View Pricing
+              Learn More
             </Link>
           </div>
 
           {/* Trust Indicators */}
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-8 text-sm text-muted-foreground">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-8 text-sm text-muted-foreground relative z-10 font-body">
             <div className="flex items-center space-x-2">
-              <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              <span>No credit card required</span>
+              <span className="w-2 h-2 rounded-full bg-green-500"></span>
+              <span>100% Free & Anonymous</span>
             </div>
             <div className="flex items-center space-x-2">
-              <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              <span>14-day money-back guarantee</span>
+              <span className="w-2 h-2 rounded-full bg-green-500"></span>
+              <span>Verified by Authorities</span>
             </div>
             <div className="flex items-center space-x-2">
-              <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              <span>Cancel anytime</span>
+              <span className="w-2 h-2 rounded-full bg-green-500"></span>
+              <span>Encrypted Data</span>
             </div>
           </div>
         </div>

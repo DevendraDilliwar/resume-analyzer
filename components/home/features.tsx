@@ -1,59 +1,65 @@
 "use client";
 
-import { Brain, Target, Zap, Shield, BarChart3, CheckCircle } from "lucide-react";
+import { Shield, Map, Bell, Lock, Eye, Users } from "lucide-react";
 
 const features = [
   {
-    icon: Brain,
-    title: "AI-Powered Analysis",
-    description: "Advanced AI algorithms analyze your resume for content quality, formatting, and ATS compatibility.",
-    gradient: "from-purple-500 to-pink-500",
-  },
-  {
-    icon: Target,
-    title: "ATS Optimization",
-    description: "Ensure your resume passes Applicant Tracking Systems with our specialized optimization tools.",
-    gradient: "from-blue-500 to-cyan-500",
-  },
-  {
-    icon: Zap,
-    title: "Instant Feedback",
-    description: "Get real-time suggestions and improvements as you upload your resume. No waiting required.",
-    gradient: "from-orange-500 to-yellow-500",
-  },
-  {
     icon: Shield,
-    title: "Privacy First",
-    description: "Your data is encrypted and secure. We never share your information with third parties.",
-    gradient: "from-green-500 to-emerald-500",
+    title: "Anonymous Reporting",
+    description: "Submit crime reports without revealing your identity. Your safety and privacy are our top priority.",
+    color: "text-blue-500",
+    bg: "bg-blue-500/10",
   },
   {
-    icon: BarChart3,
-    title: "Detailed Scoring",
-    description: "Comprehensive scoring system that evaluates every aspect of your resume with actionable insights.",
-    gradient: "from-indigo-500 to-purple-500",
+    icon: Map,
+    title: "Live Safety Map",
+    description: "View real-time incidents in your area on an interactive map. Stay informed about local safety trends.",
+    color: "text-blue-500",
+    bg: "bg-blue-500/10",
   },
   {
-    icon: CheckCircle,
-    title: "Industry Standards",
-    description: "Benchmarked against industry best practices and hiring manager preferences.",
-    gradient: "from-pink-500 to-rose-500",
+    icon: Bell,
+    title: "Real-time Alerts",
+    description: "Receive instant notifications about critical incidents happening in your neighborhood.",
+    color: "text-blue-500",
+    bg: "bg-blue-500/10",
+  },
+  {
+    icon: Lock,
+    title: "End-to-End Encryption",
+    description: "All data submission is encrypted. We use bank-grade security to protect your information.",
+    color: "text-blue-500",
+    bg: "bg-blue-500/10",
+  },
+  {
+    icon: Eye,
+    title: "Verified Updates",
+    description: "Community moderators and local authorities verify reports to ensure information accuracy.",
+    color: "text-blue-500",
+    bg: "bg-blue-500/10",
+  },
+  {
+    icon: Users,
+    title: "Community Driven",
+    description: "Join thousands of neighbors working together to create safer streets and communities.",
+    color: "text-blue-500",
+    bg: "bg-blue-500/10",
   },
 ];
 
 export function Features() {
   return (
-    <section id="features" className="py-20 lg:py-32 relative">
+    <section id="features" className="py-20 lg:py-32 relative bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold">
-            <span className="bg-gradient-to-r from-purple-600 to-cyan-600 bg-clip-text text-transparent">
-              Powerful Features
+          <h2 className="text-4xl sm:text-5xl font-bold font-sans">
+            <span className="text-foreground">
+              Powerful Safety Features
             </span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Everything you need to create a winning resume that gets you noticed by recruiters and hiring managers.
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-body">
+            Everything you need to keep yourself and your community safe.
           </p>
         </div>
 
@@ -64,23 +70,20 @@ export function Features() {
             return (
               <div
                 key={index}
-                className="group relative p-8 rounded-2xl bg-card border border-border hover:border-purple-500/50 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/10 hover:-translate-y-1"
+                className="group relative p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1"
               >
                 {/* Icon */}
-                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.gradient} p-3 mb-6 transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
-                  <Icon className="w-full h-full text-white" />
+                <div className={`w-14 h-14 rounded-xl ${feature.bg} p-3 mb-6 transform group-hover:scale-110 transition-all duration-300`}>
+                  <Icon className={`w-full h-full ${feature.color}`} />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-semibold mb-3 text-foreground">
+                <h3 className="text-xl font-semibold mb-3 text-foreground font-sans">
                   {feature.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed font-body">
                   {feature.description}
                 </p>
-
-                {/* Hover Effect Border */}
-                <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300 -z-10`}></div>
               </div>
             );
           })}
