@@ -51,7 +51,7 @@ export function LoginForm({
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card className="bg-card border-border shadow-xl">
         <CardHeader className="text-center">
-          <CardTitle className="text-2xl font-bold font-sans text-white">Login</CardTitle>
+          <CardTitle className="text-2xl font-bold font-sans">Login</CardTitle>
           <CardDescription className="text-muted-foreground font-body">
             Enter your email below to login to your account
           </CardDescription>
@@ -60,7 +60,7 @@ export function LoginForm({
           <form onSubmit={handleLogin}>
             <div className="flex flex-col gap-6">
               <div className="grid gap-2">
-                <Label htmlFor="email" className="font-body text-white">Email</Label>
+                <Label htmlFor="email" className="font-body">Email</Label>
                 <Input
                   id="email"
                   type="email"
@@ -68,12 +68,12 @@ export function LoginForm({
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="bg-secondary border-input text-white placeholder:text-muted-foreground focus-visible:ring-primary font-body"
+                  className="bg-secondary border-input placeholder:text-muted-foreground focus-visible:ring-primary font-body"
                 />
               </div>
               <div className="grid gap-2">
                 <div className="flex items-center">
-                  <Label htmlFor="password" className="font-body text-white">Password</Label>
+                  <Label htmlFor="password" className="font-body">Password</Label>
                   <Link
                     href="/auth/forgot-password"
                     className="ml-auto inline-block text-sm underline-offset-4 hover:text-primary font-body text-muted-foreground"
@@ -87,11 +87,11 @@ export function LoginForm({
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="bg-secondary border-input text-white focus-visible:ring-primary font-body"
+                  className="bg-secondary border-input focus-visible:ring-primary font-body"
                 />
               </div>
               {error && <p className="text-sm text-red-500 font-body">{error}</p>}
-              <Button type="submit" className="w-full bg-primary hover:bg-blue-600 text-white font-sans font-semibold" disabled={isLoading}>
+              <Button type="submit" className="w-full bg-primary hover:bg-red-700 text-white font-sans font-semibold" disabled={isLoading}>
                 {isLoading ? "Logging in..." : "Login"}
               </Button>
             </div>

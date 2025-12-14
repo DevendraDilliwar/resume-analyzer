@@ -60,14 +60,14 @@ export function SignUpForm({
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card className="bg-card border-border shadow-xl">
         <CardHeader className="text-center">
-          <CardTitle className="text-2xl font-bold font-sans text-white">Sign up</CardTitle>
+          <CardTitle className="text-2xl font-bold font-sans">Sign up</CardTitle>
           <CardDescription className="text-muted-foreground font-body">Create a new account to get started</CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSignUp}>
             <div className="flex flex-col gap-6">
               <div className="grid gap-2">
-                <Label htmlFor="email" className="font-body text-white">Email</Label>
+                <Label htmlFor="email" className="font-body">Email</Label>
                 <Input
                   id="email"
                   type="email"
@@ -75,12 +75,12 @@ export function SignUpForm({
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="bg-secondary border-input text-white placeholder:text-muted-foreground focus-visible:ring-primary font-body"
+                  className="bg-secondary border-input placeholder:text-muted-foreground focus-visible:ring-primary font-body"
                 />
               </div>
               <div className="grid gap-2">
                 <div className="flex items-center">
-                  <Label htmlFor="password" className="font-body text-white">Password</Label>
+                  <Label htmlFor="password" className="font-body">Password</Label>
                 </div>
                 <Input
                   id="password"
@@ -88,12 +88,12 @@ export function SignUpForm({
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="bg-secondary border-input text-white focus-visible:ring-primary font-body"
+                  className="bg-secondary border-input focus-visible:ring-primary font-body"
                 />
               </div>
               <div className="grid gap-2">
                 <div className="flex items-center">
-                  <Label htmlFor="repeat-password" className="font-body text-white">Repeat Password</Label>
+                  <Label htmlFor="repeat-password" className="font-body">Repeat Password</Label>
                 </div>
                 <Input
                   id="repeat-password"
@@ -101,11 +101,11 @@ export function SignUpForm({
                   required
                   value={repeatPassword}
                   onChange={(e) => setRepeatPassword(e.target.value)}
-                  className="bg-secondary border-input text-white focus-visible:ring-primary font-body"
+                  className="bg-secondary border-input focus-visible:ring-primary font-body"
                 />
               </div>
               {error && <p className="text-sm text-red-500 font-body">{error}</p>}
-              <Button type="submit" className="w-full bg-primary hover:bg-blue-600 text-white font-sans font-semibold" disabled={isLoading}>
+              <Button type="submit" className="w-full bg-primary hover:bg-red-700 text-white font-sans font-semibold" disabled={isLoading}>
                 {isLoading ? "Creating an account..." : "Sign up"}
               </Button>
             </div>
