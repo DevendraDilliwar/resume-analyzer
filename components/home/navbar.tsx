@@ -91,7 +91,7 @@ export function Navbar() {
           <div className="hidden md:flex items-center space-x-4">
 
             <Link
-              href="/auth/sign-in"
+              href="/help"
               className="px-6 py-2.5 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-blue-600 hover:shadow-lg hover:shadow-blue-900/20 transform hover:scale-105 transition-all duration-300 font-sans"
             >
               Emergency SOS
@@ -147,7 +147,7 @@ export function Navbar() {
               }
             })}
             <Link
-              href="/auth/sign-in"
+              href="/help"
               className="block text-center px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold mt-4 font-sans hover:bg-blue-600 transition-colors"
             >
               Emergency SOS
