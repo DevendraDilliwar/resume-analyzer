@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { ThemeSwitcher } from "@/components/theme-switcher";
+
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -18,11 +18,10 @@ export function Navbar() {
   }, []);
 
   const navLinks = [
-    { href: "#features", label: "Features" },
-    { href: "#how-it-works", label: "How It Works" },
-    { href: "#report", label: "Report Incident" },
-    { href: "#resources", label: "Resources" },
-    { href: "#faq", label: "FAQ" },
+    { href: "/report", label: "Report" },
+    { href: "/news", label: "News" },
+    { href: "/safety-tips", label: "Safety" },
+    { href: "/help", label: "Help" },
   ];
 
   const scrollToSection = (
@@ -59,22 +58,38 @@ export function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => scrollToSection(e, link.href)}
-                className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium font-body relative group"
-              >
-                {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isHashLink = link.href.startsWith("#");
+              if (isHashLink) {
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={(e) => scrollToSection(e, link.href)}
+                    className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium font-body relative group cursor-pointer"
+                  >
+                    {link.label}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                  </a>
+                );
+              } else {
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium font-body relative group"
+                  >
+                    {link.label}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
+                  </Link>
+                );
+              }
+            })}
           </div>
 
           {/* CTA and Theme Switcher */}
           <div className="hidden md:flex items-center space-x-4">
-            <ThemeSwitcher />
+
             <Link
               href="/auth/sign-in"
               className="px-6 py-2.5 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-blue-600 hover:shadow-lg hover:shadow-blue-900/20 transform hover:scale-105 transition-all duration-300 font-sans"
@@ -85,7 +100,7 @@ export function Navbar() {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-3">
-            <ThemeSwitcher />
+
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2 rounded-lg hover:bg-accent transition-colors"
@@ -105,16 +120,32 @@ export function Navbar() {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-background/95 backdrop-blur-lg border-t border-border">
           <div className="px-4 py-6 space-y-4">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => scrollToSection(e, link.href)}
-                className="block text-foreground/70 hover:text-foreground transition-colors duration-200 font-medium py-2 font-body"
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isHashLink = link.href.startsWith("#");
+              if (isHashLink) {
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={(e) => scrollToSection(e, link.href)}
+                    className="block text-foreground/70 hover:text-foreground transition-colors duration-200 font-medium py-2 font-body cursor-pointer"
+                  >
+                    {link.label}
+                  </a>
+                );
+              } else {
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block text-foreground/70 hover:text-foreground transition-colors duration-200 font-medium py-2 font-body"
+                  >
+                    {link.label}
+                  </Link>
+                );
+              }
+            })}
             <Link
               href="/auth/sign-in"
               className="block text-center px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold mt-4 font-sans hover:bg-blue-600 transition-colors"

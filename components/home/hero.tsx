@@ -53,24 +53,6 @@ export function Hero() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-16 max-w-3xl mx-auto">
             <div className="space-y-2">
               <div className="flex items-center justify-center space-x-2">
-                <Siren className="w-6 h-6 text-primary" />
-                <div className="text-3xl font-bold font-sans text-foreground">
-                  24/7
-                </div>
-              </div>
-              <p className="text-sm text-muted-foreground font-body">Live Monitoring</p>
-            </div>
-            <div className="space-y-2">
-              <div className="flex items-center justify-center space-x-2">
-                <MapPin className="w-6 h-6 text-primary" />
-                <div className="text-3xl font-bold font-sans text-foreground">
-                  500+
-                </div>
-              </div>
-              <p className="text-sm text-muted-foreground font-body">Neighborhoods Covered</p>
-            </div>
-            <div className="space-y-2">
-              <div className="flex items-center justify-center space-x-2">
                 <Users className="w-6 h-6 text-primary" />
                 <div className="text-3xl font-bold font-sans text-foreground">
                   50K+

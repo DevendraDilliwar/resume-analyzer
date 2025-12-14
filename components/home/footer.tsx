@@ -6,22 +6,22 @@ import { Github, Twitter, Linkedin, Mail } from "lucide-react";
 
 const footerLinks = {
   product: [
-    { label: "Report Incident", href: "#report" },
-    { label: "Safety Map", href: "#map" },
-    { label: "Anonymous Tips", href: "#tips" },
-    { label: "FAQ", href: "#faq" },
+    { label: "Report Incident", href: "/report" },
+    { label: "Community News", href: "/news" },
+    { label: "Safety Tips", href: "/safety-tips" },
+    { label: "Help Center", href: "/help" },
   ],
   company: [
-    { label: "About Us", href: "/about" },
-    { label: "Community", href: "/community" },
-    { label: "Partners", href: "/partners" },
-    { label: "Contact", href: "/contact" },
+    { label: "About Us", href: "#" },
+    { label: "Community", href: "/news" },
+    { label: "Partners", href: "#" },
+    { label: "Contact", href: "/help" },
   ],
   legal: [
-    { label: "Privacy Policy", href: "/privacy" },
-    { label: "Terms of Service", href: "/terms" },
-    { label: "Cookie Policy", href: "/cookies" },
-    { label: "Disclaimer", href: "/disclaimer" },
+    { label: "Privacy Policy", href: "#" },
+    { label: "Terms of Service", href: "#" },
+    { label: "Cookie Policy", href: "#" },
+    { label: "Disclaimer", href: "#" },
   ],
 };
 
