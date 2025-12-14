@@ -36,7 +36,7 @@ export function Hero() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <Link
               href="/auth/sign-up"
-              className="group px-8 py-4 rounded-full bg-primary hover:bg-blue-600 text-white font-semibold font-sans text-lg transform hover:scale-105 transition-all duration-300 flex items-center space-x-2 shadow-lg shadow-blue-900/20"
+              className="group px-8 py-4 rounded-full bg-primary hover:bg-primary/90 text-white font-semibold font-sans text-lg transform hover:scale-105 transition-all duration-300 flex items-center space-x-2 shadow-lg shadow-primary/20"
             >
               <span>Report Incident</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

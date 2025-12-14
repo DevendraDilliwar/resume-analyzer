@@ -5,32 +5,32 @@
 @layer base {
   /* Light mode - forcing a dark-ish blue theme or keeping it neutral but compatible */
   :root {
-    --background: 222 47% 11%; /* Dark Blue Black */
-    --foreground: 210 40% 98%;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
 
-    --card: 222 47% 11%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
 
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 221 83% 53%; /* Bright Blue */
+    --primary: 0 85% 45%; /* Red to match dark mode */
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 217 33% 17%; /* Darker Blue Gray */
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 217 33% 17%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
-    --destructive: 0 63% 31%;
+    --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
     --ring: 0 85% 45%;
 
     --radius: 0.5rem;

@@ -5,6 +5,8 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 
+import { ThemeSwitcher } from "@/components/theme-switcher";
+
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -48,7 +50,7 @@ export function Navbar() {
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-md shadow-blue-900/20">
+            <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-md shadow-primary/20">
               <span className="text-primary-foreground font-bold text-xl">C</span>
             </div>
             <span className="text-xl font-bold text-foreground">
@@ -89,10 +91,10 @@ export function Navbar() {
 
           {/* CTA and Theme Switcher */}
           <div className="hidden md:flex items-center space-x-4">
-
+            <ThemeSwitcher />
             <Link
               href="/help"
-              className="px-6 py-2.5 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-blue-600 hover:shadow-lg hover:shadow-blue-900/20 transform hover:scale-105 transition-all duration-300 font-sans"
+              className="px-6 py-2.5 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20 transform hover:scale-105 transition-all duration-300 font-sans"
             >
               Emergency SOS
             </Link>
@@ -100,7 +102,7 @@ export function Navbar() {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-3">
-
+             <ThemeSwitcher />
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2 rounded-lg hover:bg-accent transition-colors"
@@ -148,7 +150,7 @@ export function Navbar() {
             })}
             <Link
               href="/help"
-              className="block text-center px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold mt-4 font-sans hover:bg-blue-600 transition-colors"
+              className="block text-center px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold mt-4 font-sans hover:bg-primary/90 transition-colors"
             >
               Emergency SOS
             </Link>

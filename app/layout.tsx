@@ -38,8 +38,8 @@ export default function RootLayout({
       <body className={`${jakarta.variable} ${poppins.variable} antialiased font-body`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
-          forcedTheme="dark"
+          defaultTheme="system"
+          enableSystem
           disableTransitionOnChange
         >
           {children}

@@ -7,43 +7,43 @@ const features = [
     icon: Shield,
     title: "Anonymous Reporting",
     description: "Submit crime reports without revealing your identity. Your safety and privacy are our top priority.",
-    color: "text-blue-500",
-    bg: "bg-blue-500/10",
+    color: "text-primary",
+    bg: "bg-primary/10",
   },
   {
     icon: Map,
     title: "Live Safety Map",
     description: "View real-time incidents in your area on an interactive map. Stay informed about local safety trends.",
-    color: "text-blue-500",
-    bg: "bg-blue-500/10",
+    color: "text-primary",
+    bg: "bg-primary/10",
   },
   {
     icon: Bell,
     title: "Real-time Alerts",
     description: "Receive instant notifications about critical incidents happening in your neighborhood.",
-    color: "text-blue-500",
-    bg: "bg-blue-500/10",
+    color: "text-primary",
+    bg: "bg-primary/10",
   },
   {
     icon: Lock,
     title: "End-to-End Encryption",
     description: "All data submission is encrypted. We use bank-grade security to protect your information.",
-    color: "text-blue-500",
-    bg: "bg-blue-500/10",
+    color: "text-primary",
+    bg: "bg-primary/10",
   },
   {
     icon: Eye,
     title: "Verified Updates",
     description: "Community moderators and local authorities verify reports to ensure information accuracy.",
-    color: "text-blue-500",
-    bg: "bg-blue-500/10",
+    color: "text-primary",
+    bg: "bg-primary/10",
   },
   {
     icon: Users,
     title: "Community Driven",
     description: "Join thousands of neighbors working together to create safer streets and communities.",
-    color: "text-blue-500",
-    bg: "bg-blue-500/10",
+    color: "text-primary",
+    bg: "bg-primary/10",
   },
 ];
 
@@ -70,7 +70,7 @@ export function Features() {
             return (
               <div
                 key={index}
-                className="group relative p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1"
+                className="group relative p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1"
               >
                 {/* Icon */}
                 <div className={`w-14 h-14 rounded-xl ${feature.bg} p-3 mb-6 transform group-hover:scale-110 transition-all duration-300`}>

@@ -50,7 +50,7 @@ export function HowItWorks() {
               return (
                 <div key={index} className="relative">
                   {/* Step Card */}
-                  <div className="relative bg-card border border-border rounded-2xl p-8 hover:shadow-xl hover:shadow-blue-900/10 transition-all duration-300 hover:-translate-y-2 group">
+                  <div className="relative bg-card border border-border rounded-2xl p-8 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-2 group">
                     {/* Step Number */}
                     <div className="absolute -top-6 -left-6 w-16 h-16 rounded-2xl bg-primary flex items-center justify-center text-white font-bold text-2xl shadow-lg transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 font-sans">
                       {step.step}
